@@ -40,12 +40,12 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
     }
   };
 
-  const { darkAlgorithm, defaultAlgorithm } = theme;
+  const { darkAlgorithm, defaultAlgorithm, compactAlgorithm } = theme;
 
   const myTheme: ThemeConfig = {
     token: {
       fontFamily: "Roboto, system-ui, -apple-system, BlinkMacSystemFont",
-      colorPrimary: '#cb00ddff',
+      colorPrimary: "#cb00ddff",
       borderRadius: 4,
     },
   };
@@ -62,7 +62,7 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
         theme={{
           token: myTheme.token,
           components: myTheme.components,
-          algorithm: mode === "light" ? defaultAlgorithm : darkAlgorithm,
+          algorithm: [mode === "light" ? defaultAlgorithm : darkAlgorithm],
         }}
       >
         {children}
